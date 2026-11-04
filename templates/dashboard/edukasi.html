@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhishKit — Edukasi Anti-Phishing</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh}
+.topbar{background:linear-gradient(135deg,#1e293b,#0f172a);padding:20px;text-align:center;border-bottom:2px solid #facc15}
+.topbar h1{font-size:22px;color:#facc15}
+.topbar p{font-size:13px;color:#94a3b8;margin-top:4px}
+.slides{max-width:800px;margin:30px auto;padding:0 20px}
+.slide{background:#1e293b;border-radius:12px;padding:30px;margin-bottom:20px;border:1px solid #334155}
+.slide-num{display:inline-block;background:#facc15;color:#0f172a;padding:2px 10px;border-radius:10px;font-size:12px;font-weight:bold;margin-bottom:12px}
+.slide h2{font-size:20px;margin-bottom:12px;color:#f8fafc}
+.slide p{font-size:14px;line-height:1.8;color:#cbd5e1;margin-bottom:8px}
+.slide .highlight{background:#334155;padding:12px;border-radius:8px;border-left:3px solid #facc15;margin:12px 0;font-size:13px}
+.slide ul{list-style:none;padding:0}
+.slide ul li{padding:8px 0;padding-left:28px;position:relative;font-size:14px;color:#cbd5e1}
+.slide ul li .fa-check,.slide ul li .fa-xmark{position:absolute;left:0;top:10px}
+.slide .tip-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+.slide .tip-card{background:#334155;padding:16px;border-radius:8px;text-align:center}
+.slide .tip-card .icon{font-size:28px;margin-bottom:6px}
+.slide .tip-card h4{font-size:14px;margin-bottom:4px;color:#f8fafc}
+.slide .tip-card p{font-size:12px;color:#94a3b8}
+.actions{text-align:center;padding:20px;margin-top:10px}
+.actions a{display:inline-block;padding:12px 24px;background:#facc15;color:#0f172a;border-radius:8px;text-decoration:none;font-weight:bold;font-size:14px;margin:0 8px}
+.actions a.btn-outline{background:transparent;border:1px solid #334155;color:#e2e8f0}
+@media(max-width:600px){.slide .tip-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="topbar">
+<h1>EDUKASI ANTI-PHISHING</h1>
+<p>Cybersecurity Seminar — Literasi Cyber untuk ASN</p>
+</div>
+
+<div class="slides">
+<div class="slide">
+<span class="slide-num">PENGANTAR</span>
+<h2>Apa itu Phishing?</h2>
+<p>Phishing adalah teknik serangan siber di mana pelaku <b>menyamar sebagai entitas terpercaya</b> untuk mencuri data sensitif seperti username, password, atau informasi kartu kredit.</p>
+<p>Dalam demo tadi, Anda telah melihat bagaimana halaman login palsu bisa tampak sangat meyakinkan — bahkan untuk platform yang Anda gunakan sehari-hari.</p>
+<div class="highlight">
+<b>Fakta:</b> 91% serangan siber dimulai dari phishing. Satu klik yang salah bisa membuka akses ke seluruh sistem instansi.
+</div>
+</div>
+
+<div class="slide">
+<span class="slide-num">1</span>
+<h2>Ciri-Ciri Email/Laman Phishing</h2>
+<ul>
+<li class="wrong"><i class="fa-solid fa-xmark" style="position:absolute;left:0;top:10px;color:#ef4444"></i>Domain mencurigakan (contoh: go0gle.com, bpksdm-bekasi.net)</li>
+<li class="wrong"><i class="fa-solid fa-xmark" style="position:absolute;left:0;top:10px;color:#ef4444"></i>Mendesak dan menimbulkan panik ("Akun Anda akan ditutup!")</li>
+<li class="wrong"><i class="fa-solid fa-xmark" style="position:absolute;left:0;top:10px;color:#ef4444"></i>Tata bahasa buruk, typo, atau font tidak konsisten</li>
+<li class="wrong"><i class="fa-solid fa-xmark" style="position:absolute;left:0;top:10px;color:#ef4444"></i>Meminta data pribadi (password, NIP, PIN) melalui link/email</li>
+<li class="wrong"><i class="fa-solid fa-xmark" style="position:absolute;left:0;top:10px;color:#ef4444"></i>Tidak ada ikon gembok SSL atau SSL tidak valid</li>
+<li style="color:#22c55e">Situs resmi BPKSDM menggunakan domain <b>bekasikota.go.id</b></li>
+</ul>
+</div>
+
+<div class="slide">
+<span class="slide-num">2</span>
+<h2>Cara Memeriksa Link Sebelum Klik</h2>
+<div class="tip-grid">
+<div class="tip-card">
+<div class="icon"><i class="fa-solid fa-computer-mouse"></i></div>
+<h4>Arahkan Kursor</h4>
+<p>Lihat URL sebenarnya di pojok kiri bawah browser sebelum klik</p>
+</div>
+<div class="tip-card">
+<div class="icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+<h4>Periksa Domain</h4>
+<p>Pastikan domain utama benar. Contoh: .go.id bukan .com atau .net</p>
+</div>
+<div class="tip-card">
+<div class="icon"><i class="fa-solid fa-lock"></i></div>
+<h4>Cek SSL</h4>
+<p>Ikon gembok di address bar. Klik untuk lihat detail sertifikat</p>
+</div>
+<div class="tip-card">
+<div class="icon"><i class="fa-solid fa-circle-question"></i></div>
+<h4>Ragu? Tanya</h4>
+<p>Hubungi tim IT langsung jika menerima email mencurigakan</p>
+</div>
+</div>
+</div>
+
+<div class="slide">
+<span class="slide-num">3</span>
+<h2>Lindungi Akun Anda</h2>
+<ul>
+<li style="color:#22c55e"><i class="fa-solid fa-check" style="color:#22c55e;"></i>Gunakan password yang unik dan kuat untuk setiap akun</li>
+<li style="color:#22c55e"><i class="fa-solid fa-check" style="color:#22c55e;"></i> Aktifkan <b>2FA (Autentikasi Dua Faktor)</b> di semua akun penting</li>
+<li style="color:#22c55e"><i class="fa-solid fa-check" style="color:#22c55e;"></i> Gunakan Password Manager — tidak akan auto-fill di situs phishing</li>
+<li style="color:#22c55e"><i class="fa-solid fa-check" style="color:#22c55e;"></i> Jangan pernah memasukkan password di perangkat orang lain</li>
+<li style="color:#22c55e"><i class="fa-solid fa-check" style="color:#22c55e;"></i> Ganti password secara berkala, terutama akun kedinasan</li>
+</ul>
+</div>
+
+<div class="slide">
+<span class="slide-num">4</span>
+<h2>Social Engineering — Senjata Utama Hacker</h2>
+<p>Phishing adalah bagian dari <b>social engineering</b> — memanipulasi psikologi manusia, bukan meretas sistem. Teknik lain yang perlu diwaspadai:</p>
+<ul>
+<li><b>Pretexting:</b> Berpura-pura sebagai rekan kerja/atasan yang membutuhkan data</li>
+<li><b>Baiting:</b> Menjanjikan imbalan (USB gratis, undian) untuk mengelabui korban</li>
+<li><b>Tailgating:</b> Orang tidak dikenal masuk ke area terbatas mengikuti karyawan</li>
+<li><b>Shoulder Surfing:</b> Mengintip layar/saat mengetik password dari belakang</li>
+</ul>
+<div class="highlight">
+<b>Ingat:</b> Security awareness adalah tanggung jawab semua pegawai, bukan hanya tim IT!
+</div>
+</div>
+
+<div class="slide">
+<span class="slide-num">5</span>
+<h2>Yang Harus Dilakukan Jika Terkena Phishing</h2>
+<ul>
+<li style="color:#22c55e"><i class="fa-solid fa-check" style="color:#22c55e;"></i> Segera ubah password akun yang bersangkutan</li>
+<li style="color:#22c55e"><i class="fa-solid fa-check" style="color:#22c55e;"></i> Laporkan ke tim IT/Keamanan Informasi instansi Anda</li>
+<li style="color:#22c55e"><i class="fa-solid fa-check" style="color:#22c55e;"></i> Aktifkan 2FA jika belum</li>
+<li style="color:#22c55e"><i class="fa-solid fa-check" style="color:#22c55e;"></i> Periksa aktivitas akun yang mencurigakan (riwayat login, email terkirim)</li>
+<li style="color:#22c55e"><i class="fa-solid fa-check" style="color:#22c55e;"></i> Jangan malu atau takut — pelaporan cepat meminimalkan kerusakan</li>
+</ul>
+<div class="highlight">
+<b>Penting:</b> Di lingkungan pemerintahan, insiden keamanan harus dilaporkan sesuai prosedur SPBE (Sistem Pemerintahan Berbasis Elektronik) dan Peraturan BSSN.
+</div>
+</div>
+</div>
+
+<div class="actions">
+<a href="/dashboard">Kembali ke Dashboard</a>
+<a href="/" class="btn-outline">Lihat Template</a>
+</div>
+</body>
+</html>

